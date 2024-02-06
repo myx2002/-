@@ -1,0 +1,137 @@
+stu#show running-config
+Building configuration...
+
+Current configuration : 2875 bytes
+!
+! Last configuration change at 07:43:36 UTC Mon Jan 3 2000
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname stu
+!
+boot-start-marker
+boot-end-marker
+!
+logging console emergencies
+enable secret 5 $1$kvhh$l6RbkoQWJwEHmh2/XCmTT0
+enable password 123456
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3040559744
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3040559744
+ revocation-check none
+ rsakeypair TP-self-signed-3040559744
+!
+!
+crypto pki certificate chain TP-self-signed-3040559744
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33303430 35353937 3434301E 170D3139 31313238 30343438
+  32345A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 30343035
+  35393734 3430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100DEDE 91824D7A 0BCD07CA D86A2411 D60181EE 89F5C1D2 E1ED588A 3447B0A3
+  79B92A69 65AE4818 166D3724 6A4412D9 DB9E75DE 6523948F D92CF174 FC08AFAB
+  FACDBBBE 09A1AE03 ABFC7BC1 1F6E4D33 D5B73A6B 707DAC26 B282D046 F305A77B
+  99BDFCB3 80AB8F6C 6B1CBB7A 5B6FC6C9 17261F2A 91A71A11 B16ECD4C 003A0EF4
+  BEFF0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 1489E8D7 D8521746 CD044AB6 472511F5 A9E2DCA5 5F301D06
+  03551D0E 04160414 89E8D7D8 521746CD 044AB647 2511F5A9 E2DCA55F 300D0609
+  2A864886 F70D0101 05050003 81810080 3DC2CF7D 3F5F12D5 93D0E6D4 CD28BAAC
+  048F449E 249A4BA5 B4428573 2D8916DA 1E45E06D 995F39F7 BCFC38E8 9B2AFF0D
+  17710C9B 5A77C17D 1FB117E7 45239DAD D25E7206 0CB6E4AC 8965ECDF D31045A1
+  52ECCE7F 3EA8079B CAD61266 6DE83D78 44F6095D 0733B4C2 32B85C24 4091BEC7
+  1489BC1E B1F7A74B EF4B631B 389F4D
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface GigabitEthernet0/3
+!
+interface GigabitEthernet0/4
+!
+interface GigabitEthernet0/5
+ switchport access vlan 2
+!
+interface GigabitEthernet0/6
+!
+interface GigabitEthernet0/7
+ switchport access vlan 2
+!
+interface GigabitEthernet0/8
+!
+interface GigabitEthernet0/9
+!
+interface GigabitEthernet0/10
+!
+interface GigabitEthernet0/11
+!
+interface GigabitEthernet0/12
+!
+interface Vlan1
+ ip address 192.168.3.5 255.255.255.0
+!
+ip forward-protocol nd
+ip http server
+ip http secure-server
+!
+!
+!
+!
+no vstack
+!
+line con 0
+ exec-timeout 0 0
+line vty 0 4
+ password 1234
+ login
+line vty 5 15
+ password 123456
+ login
+!
+!
+monitor session 1 source interface Gi0/3 , Gi0/5
+!
+end
+
