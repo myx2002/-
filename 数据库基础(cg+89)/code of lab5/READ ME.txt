@@ -1,0 +1,36 @@
+本文件夹为各类“代码”集合。
+
+其中：
+add_book.php 		为批量入库模块
+add_card.php 		为借书证添加模块
+add_single_book.php	为单本入库模块
+add_stock.php		为库存修改模块
+book_borrow.php		为新的借阅模块
+book_query.php		为书本查询模块
+book_return.php		为返还图书模块
+borrow_return.php		为借还查询模块
+card_delete.php		为借书证模块
+card_query.php		为借书证查询模块
+check.php		为登录信息测试模块
+connect_mysqli.php		为php-sqli模块连接模块
+imagetry.jpg		为背景使用图片
+initial.php			为初始化登录模块
+library.sql			为初始化数据库文件
+mainsheet.php		为管理员主页模块
+record_change.php		为图书记录查询模块
+record_delete.php		为图书记录删除模块
+testdate.txt		为批量入库测试数据
+try.css			为网页美化文件
+
+
+library.sql 初始化文件中已建立两位管理员
+1.管理员ID ：202301
+管理员密码 ：123456
+
+2.管理员ID ：202301
+管理员密码 ：（空）
+
+注意：需要将此类文件放置于apache localhost文件夹下才能于浏览器中运行！
+
+
+

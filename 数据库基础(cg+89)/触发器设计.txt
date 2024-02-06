@@ -1,0 +1,17 @@
+delimiter $
+create trigger ABC
+before insert on borrow
+for each row
+begin
+    declare re int;
+    select stock into re
+    from book
+    where book.bno=new.bno;
+    if re>0 then 
+        update book
+        set book.stock=book.stock-1
+        where book.bno=new.bno;
+    else signal sqlstate 'HY000' set message_text = '已借完';
+    end if;
+end$
+delimiter ;
