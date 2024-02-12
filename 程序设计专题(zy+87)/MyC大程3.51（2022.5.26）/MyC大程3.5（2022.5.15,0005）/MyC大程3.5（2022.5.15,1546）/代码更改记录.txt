@@ -1,0 +1,83 @@
+代码修改记录
+
+【widget.c】
+1.删除了
+extern char buffer[100];
+extern char fileName[100];
+extern int pageTotalNum;
+
+2.增加了creatTextWidget中：
+当有多行文本时中间行（while循环）的Insquare判断（之前可能漏写了）
+
+【icon.c】
+1.删除了extern char fileName[100];
+
+2.删除了reactLeftArrow的：
+	if(!strcmp(PageList[nowPage].formalpage,PageList[nowPage].location))
+	{
+		return;
+	}
+（因为在page.c中如果加载的是同一页面，不会写入formalPage，也就不会遇到上面if判断的情况，应该就不用了叭)
+
+3.删除了reactRightArrow的：
+	if(!strcmp(PageList[nowPage].nextpage,PageList[nowPage].location)
+		||PageList[nowPage].nextpage[0]==0)
+	{
+		return;
+	}
+(一方面理由同上，另一方面有了permit函数判断，所以应该不需要"||"右边的条件了）
+
+4.删除了reactLefyArrow中的：
+strcpy(PageList[nowPage].location,PageList[nowPage].formalpage);
+（因为在loadingPage中已经进行了strcpy的操作）
+
+【displayBox.c】
+1.代码更改
+对于函数writeInBox中换行条件的判断
+由原先的	if(nowBox->nowPrintX+TextStringWidth(tmp) <=
+		nowBox->positionX+nowBox->boxWdith-nowBox->boxSideGap*2)
+改为	if(nowBox->nowPrintX+TextStringWidth(tmp) <=
+		 nowBox->positionX+nowBox->boxWdith-nowBox->boxSideGap)
+
+【display.c】
+1.删除了
+extern int isClick;
+linkedlistADT text;
+
+2.删除了drawPageBar函数中：
+SetPointSize(17)；后的
+drawMenuBar(0,windowHeight-2*menuBarHeight,windowWidth,menuBarHeight);
+
+3.代码修改
+loadingPage中：
+	if(fp==NULL)
+	{
+		nowPage->location==NULL;
+		return;
+	}
+更改为
+	if(fp==NULL)
+	{
+		nowPage->location[0]='\0';
+		return;
+	}
+
+【analysisTag.c】
+1.删除了函数
+void resetList()
+对应的也删除了
+(在dealTag中已经有对列表结束标签的相应操作？）
+
+【analysisText.c】
+1.删除了
+extern int pageTotalNum;
+
+【analysisTag.c】
+1.删除了
+dealTag函数最后return 0语句（函数类型为void，无需返回值）
+
+【displaybox.c】
+1.删除了
+drawDotLine最后的return语句（函数类型为void，无需返回语句）
+
+

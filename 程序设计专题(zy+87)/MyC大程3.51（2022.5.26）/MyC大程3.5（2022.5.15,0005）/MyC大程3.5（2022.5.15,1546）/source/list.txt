@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="GBK"> 
+<title>列表展示</title> 
+</head> 
+<body>
+<h3> 此处展示无序，有序列表</h3>
+<hr>
+<p>以下是一个无序列表，带嵌套的哦</p>
+<ul>
+<li>123456</li>
+<li>654321</li>
+<ul>
+<li>123456</li>
+<li>654321</li>
+</ul>
+</ul>
+<hr>
+<p>以下是一个有序列表，同样带嵌套的哦</p>
+<ol>
+<li>123456</li>
+<li>654321</li>
+<ol>
+<li>123456</li>
+<li>654321</li>
+</ol>
+</ol>
+<hr>
+</body>
+</html>

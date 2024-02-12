@@ -1,0 +1,49 @@
+# Project: 最后一次
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o libgraphics（基本库）/exceptio.o libgraphics（基本库）/genlib.o libgraphics（基本库）/graphics.o libgraphics（基本库）/linkedlist.o libgraphics（基本库）/random.o libgraphics（基本库）/simpio.o libgraphics（基本库）/strlib.o
+LINKOBJ  = main.o libgraphics（基本库）/exceptio.o libgraphics（基本库）/genlib.o libgraphics（基本库）/graphics.o libgraphics（基本库）/linkedlist.o libgraphics（基本库）/random.o libgraphics（基本库）/simpio.o libgraphics（基本库）/strlib.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -mwindows -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = 最后一次.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+libgraphics（基本库）/exceptio.o: libgraphics（基本库）/exceptio.c
+	$(CC) -c libgraphics（基本库）/exceptio.c -o libgraphics（基本库）/exceptio.o $(CFLAGS)
+
+libgraphics（基本库）/genlib.o: libgraphics（基本库）/genlib.c
+	$(CC) -c libgraphics（基本库）/genlib.c -o libgraphics（基本库）/genlib.o $(CFLAGS)
+
+libgraphics（基本库）/graphics.o: libgraphics（基本库）/graphics.c
+	$(CC) -c libgraphics（基本库）/graphics.c -o libgraphics（基本库）/graphics.o $(CFLAGS)
+
+libgraphics（基本库）/linkedlist.o: libgraphics（基本库）/linkedlist.c
+	$(CC) -c libgraphics（基本库）/linkedlist.c -o libgraphics（基本库）/linkedlist.o $(CFLAGS)
+
+libgraphics（基本库）/random.o: libgraphics（基本库）/random.c
+	$(CC) -c libgraphics（基本库）/random.c -o libgraphics（基本库）/random.o $(CFLAGS)
+
+libgraphics（基本库）/simpio.o: libgraphics（基本库）/simpio.c
+	$(CC) -c libgraphics（基本库）/simpio.c -o libgraphics（基本库）/simpio.o $(CFLAGS)
+
+libgraphics（基本库）/strlib.o: libgraphics（基本库）/strlib.c
+	$(CC) -c libgraphics（基本库）/strlib.c -o libgraphics（基本库）/strlib.o $(CFLAGS)

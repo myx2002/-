@@ -1,0 +1,19 @@
+(前面加数据类型方便识别在改动哪些变量)
+
+int	nowPage 	-> ithWebPage
+int	pageTotalNum -> webPageNum
+int	textBoxpageTotalNum -> textPageNum
+int	outputBoxPageTotalNum -> outputPageNum
+int	nowTextBoxPage -> ithTextPage
+int	nowOutputBoxPage -> ithOutputPage
+
+char	pageName[30] -> webPageName[30]
+char	nextpage[30] -> nextPage[30]
+char	formalpage[30] -> formalPage[30]
+
+linkedlistADT	text -> textContent
+linkedlistADT  	textBoxPage -> textPageContent
+linkedlistADT	outputBoxPage -> outputPageContent	
+
+函数形参表中变量名的修改
+void cancelPage(int now) ->(int canceledWebPage)
