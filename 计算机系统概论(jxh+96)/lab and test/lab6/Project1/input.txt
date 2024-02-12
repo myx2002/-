@@ -1,0 +1,12 @@
+ .ORIG  x3000
+JSR BRnzs 
+BRnzs   OUT   
+JSRR R1 
+LEA R1, BRnzs 
+LEA R1, #33
+LEA R1, #-33
+.BLKW #3 
+.FILL x3F  
+B ADD R1, R1, R2
+LEA R1, BRnzs 
+.END
