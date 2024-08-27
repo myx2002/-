@@ -1,0 +1,125 @@
+.footCont{
+	display: flex;
+	background-color: var(--neutral-color-white);
+	padding: 20rpx 30rpx;
+	box-sizing: border-box;
+	.footButCan{
+		flex: 125;
+		margin-right: 30rpx;
+	}
+	.footBut{
+		flex: 200;
+	}
+}
+.button, .buttonCancel, .buttonDis1{
+	display: inline-block;
+	padding:20rpx;
+	color: var(--neutral-color-white);
+	background-color: var(--essential-color-red);
+	border-radius: 50rpx;
+	text-align: center;
+	box-sizing: border-box;
+	width: 100%;
+	font-size: var(--font-size-14);
+}
+.buttonCancel{
+	color: var(--neutral-color-main);
+	background-color: var(--neutral-color-cancel);
+}
+.buttonDis1{
+	color: var(--neutral-color-white);
+	background-color: var(--neutral-color-disable1);
+}
+
+
+.card{
+	padding: 0rpx 20rpx;
+	margin: 15rpx 0;
+	border-radius: 20rpx;
+	background: var(--neutral-color-white);
+	.addrCont{
+		font-weight: 400;
+		font-size: 28rpx;
+		color: #818181;
+		letter-spacing: 0.32rpx;
+		padding-bottom: 40rpx;
+		margin-bottom: 10rpx;
+		border-bottom:  1px solid #EEEEEE;
+		position: relative;
+		&:before{
+			position: absolute;
+			left: 18rpx;
+			color:var(--neutral-color-white);
+			text-align: center;
+			content: '';
+			display: inline-block;
+			width: 0px;
+			height: 56%;
+			border-left: dashed 2px #D9D9D9;
+			border-radius: 11px;
+		}
+		.startAddr{
+			padding-left: 66rpx;
+			position: relative;
+			margin-bottom: 20rpx;
+			line-height: 44rpx;
+			&:before{
+				position: absolute;
+				font-size: 22rpx;
+				left: 0;
+				color:var(--neutral-color-white);
+				text-align: center;
+				content: '提';
+				display: inline-block;
+				width: 22px;
+				height: 22px;
+				background: #1e131d;
+				border-radius: 11px;
+			}
+		}
+		.midAddr{
+			padding-left: 66rpx;
+			position: relative;
+			margin-bottom: 20rpx;
+			line-height: 44rpx;
+			&:before{
+				position: absolute;
+				font-size: 22rpx;
+				left: 0;
+				color:var(--neutral-color-white);
+				text-align: center;
+				content: '门';
+				display: inline-block;
+				width: 22px;
+				height: 22px;
+				background: #22a2c3;
+				border-radius: 11px;
+			}
+		}
+		.endAddr{
+			padding-left: 66rpx;
+			position: relative;
+			line-height: 44rpx;
+			margin-bottom: 20rpx;
+			// height: 44rpx;
+			// overflow: hidden;
+			&:before{
+				font-size: 22rpx;
+				position: absolute;
+				left: 0;
+				color: var(--neutral-color-white);
+				text-align: center;
+				content: '还';
+				display: inline-block;
+				width: 22px;
+				height: 22px;
+				background: #EF4F3F;
+				border-radius: 11px;
+			}
+		}
+		.textfont{
+			font-weight: bold;
+			color: #000000;
+		}
+	}
+}
