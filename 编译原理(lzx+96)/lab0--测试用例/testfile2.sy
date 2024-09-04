@@ -1,0 +1,28 @@
+void check()
+{
+    //函数体block测试
+    -1;
+    ;
+    {
+        -1 + 2;
+    }
+    //运算测试
+    int a = 2;
+    int b = a / 1;
+    int c = a % 2;
+    //空return测试
+    return;
+}
+
+
+int main()
+{
+    int a = 5;
+    int b = 2;
+    //不等符测试
+    if(a == 10 || a != b)
+        check();
+    else
+        write(a % 5);
+    return  0;
+}

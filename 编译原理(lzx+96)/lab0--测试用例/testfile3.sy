@@ -1,0 +1,24 @@
+int main()
+{
+    //运算测试
+    int a = 5;
+    int b = 5 * 2;
+    int c = 3 + 4;
+    if( a == b)
+        write(a);
+    else
+        write(b);
+    //比较符测试
+    if ((a + 2) < b &&  c == 7 )
+        c = 1;
+    
+    if ((a + 2) >= b &&  c == 7 )
+        c = 1;
+
+    if ((a + 2) <= b &&  c == 7 )
+        c = 1;
+
+    if ((a + 2) > b &&  c == 7 )
+        c = 1;
+    return 0;
+}

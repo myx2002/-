@@ -1,0 +1,42 @@
+p(aa).
+p(bb).
+p(cc).
+p(dd).
+p(ee).
+adjent(aa,bb).
+adjent(bb,cc).
+adjent(cc,dd).
+adjent(dd,ee).
+adjent(bb,aa).
+adjent(cc,bb).
+adjent(dd,cc).
+adjent(ee,dd).
+right(aa,bb).
+right(bb,cc).
+right(cc,dd).
+right(dd,ee).
+right(aa,cc).
+right(aa,dd).
+right(aa,ee).
+right(bb,ee).
+right(bb,dd).
+right(cc,ee).
+
+houseown(B,S,J,I,N):-
+    p(B),p(S),p(J),p(I),p(N),
+    \+B=S,\+B=J,\+B=I,\+B=N,
+    \+J=S,\+I=S,\+N=S,
+    \+J=I,\+J=N,
+    \+N=I.
+zebra(X,KH):-
+    houseown(R,B,G,Y,W),%颜色
+	houseown(DO,HO,FO,WO,X),%宠物
+    houseown(YU,SU,WU,XU,EU),%职业
+    houseown(CH,NH,KH,FH,JH),%喝
+    houseown(BB,JJ,II,NN,SS),%国家
+    R=BB,DO=SS,YU=JJ,CH=II,NN=aa,
+    right(W,G),
+    SU=WO,Y=WU,NH=cc,G=FH,XU=JH,
+    adjent(NN,B),
+    adjent(FO,EU),
+    adjent(HO,WU).

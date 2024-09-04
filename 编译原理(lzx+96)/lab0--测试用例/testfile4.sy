@@ -1,0 +1,34 @@
+///测试数组作为函数参数
+void hole(int arr[], int num)
+{
+    //以修改为例
+    arr[num-1] = num;
+}
+//二维数组作为函数参数
+void big_hole(int arr[][3], int num)    
+{
+    arr[0][2] = num;
+}
+
+int main()
+{
+    //数组，二位数组的测试
+    int a = 1, b = 2;
+    int d[2][3];
+    int c[2] = {1,2};
+    while(c[0] && a == b + 1)
+        a = a - 1;
+    hole(c , 2);
+    big_hole(d, 2);
+
+    //测试半目运算符
+    int aa = +1;
+    int bb = 0;
+    if(!bb && bb == aa)
+        bb = -bb;
+
+    //测试带括号的exp计算式
+    int cc = (1 + 2 * 3) + 2 - 3 * 5;
+
+    return 0;
+}
